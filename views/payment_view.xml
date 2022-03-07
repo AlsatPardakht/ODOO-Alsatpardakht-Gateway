@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_acquirer_form" model="ir.ui.view">
+        <field name="name">acquirer.form.alsatpardakht</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.acquirer_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='acquirer']" position="after">
+                <group attrs="{'invisible': [('provider', '!=', 'alsatpardakht')]}">
+                    <field name="as_api_key"/>
+                    <field name="as_direct_gatway"/>
+
+                    <a colspan="2" href="https://www.alsatpardakht.com/"
+                       target="_blank">How to configure your alsatparakht account?
+                    </a>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
